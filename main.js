@@ -7,6 +7,8 @@ function game() {
 function playRound() {
     const playerSelection = playerChoice();
     const computerSelection = computerChoice();
+    const winner = checkWinner(playerSelection, computerSelection);
+    console.log(winner);
 }
 
 function playerChoice() {
@@ -21,9 +23,7 @@ function playerChoice() {
         input = input.toLowerCase();
         check = validateInput(input);
       }
-
-
-    //console.log(input);
+    return input;
 
 }
 
@@ -37,7 +37,26 @@ function validateInput(choice) {
 };
 
 function computerChoice() {
-    return choices[Math.floor(Math.random *choices.length)];
+    return choices[Math.floor(Math.random() * choices.length)];
+}
+
+function checkWinner(choiceP,choiceC) {
+    if (choiceP == choiceC) {
+        return "Tie";
+    } else if (choiceP == "rock" && choiceC == "scissors") {
+        return "Player wins. Rock beats scissors."
+    } else if (choiceP == "paper" && choiceC == "rock") {
+        return "Player wins. Paper beats rock."
+    } else if (choiceP == "scissors" && choiceC == "paper") {
+        return "Player wins. Scissors beat paper." 
+    } else if (choiceP == "rock" && choiceC == "paper") {
+        return "Computer wins. Paper beats rock."
+    } else if (choiceP == "paper" && choiceC == "scissors") {
+        return "Computer wins. Scissors beat paper."
+    } else if (choiceP == "scissors" && choiceC == "rock") {
+        return "Computer wins. Rock beats scissors."
+    }
+
 }
 
 game();

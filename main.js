@@ -17,8 +17,10 @@ function playerChoice() {
     input = input.toLowerCase();
     let check = validateInput(input);
     while (check == false) {
-        prompt("Type Rock, Paper, or Scissors. Spelling matters, but capitalization doesn't!");
-    }
+        input = prompt("Type Rock, Paper, or Scissors. Spelling matters, but capitalization doesn't!");
+        input = input.toLowerCase();
+        check = validateInput(input);
+      }
 
 
     //console.log(input);

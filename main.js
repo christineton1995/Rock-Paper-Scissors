@@ -1,17 +1,16 @@
 const choices = ["rock","paper","scissors"]
 
 function game() {
-    //play the game
-    //play five rounds 
-    //console based
+    playRound();
 }
 
 function playRound() {
-    const playerSelection =
+    const playerSelection = playerChoice();
+    const computerSelection = computerChoice();
 }
 
 function playerChoice() {
-    //get input from player
+    let input = prompt("Rock, Paper, or Scissors?")
 }
 
 function computerChoice() {

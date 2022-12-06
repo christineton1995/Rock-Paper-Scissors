@@ -44,3 +44,9 @@ const rButton = document.getElementById("rBtn");
 rButton.addEventListener("click", () => {
     console.log (playRound("rock",computerChoice()));
 });
+
+//Adding functionality to Paper BUtton 
+const pButton = document.getElementById("pBtn");
+pButton.addEventListener("click", () => {
+    console.log (playRound("paper",computerChoice()));
+})

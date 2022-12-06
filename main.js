@@ -45,8 +45,15 @@ rButton.addEventListener("click", () => {
     console.log (playRound("rock",computerChoice()));
 });
 
-//Adding functionality to Paper BUtton 
+//Adding functionality to Paper Button 
 const pButton = document.getElementById("pBtn");
 pButton.addEventListener("click", () => {
     console.log (playRound("paper",computerChoice()));
 })
+
+//Adding functionality to Scissors Button 
+const sButton = document.getElementById("sBtn");
+sButton.addEventListener("click", () => {
+    console.log(playRound("paper", computerChoice()));
+})
+

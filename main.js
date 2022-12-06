@@ -17,7 +17,7 @@ function playRound() {
 function playerChoice() {
     let input = prompt("Rock, Paper, or Scissors?");
     while (input == null) {
-        input = prompt("Rock, Paper or Scissors?");
+        input = prompt("Rock, Paper, or Scissors?");
     }
     input = input.toLowerCase();
     let check = validateInput(input);

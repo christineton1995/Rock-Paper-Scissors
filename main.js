@@ -7,14 +7,40 @@ const choices = ["rock","paper","scissors"]
     }
 } */
 
+// variables for storing scores
+let playerScore = 0;
+let computerScore = 0;
+
+
+//function to play one round, and keep track of score
 function playRound() {
-    const playerSelection = playerChoice();
-    const computerSelection = computerChoice();
-    const winner = checkWinner(playerSelection, computerSelection);
-    console.log(winner);
+    let playerSelection = choices;
+    let computerSelection = computerChoice();
+    if (playerSelection == computerSelection) {
+        return "Tie";
+    } else if (playerSelection == "rock" && computerSelection == "scissors") {
+        playerScore++;
+        return "Player wins. Rock beats scissors.";
+    } else if (playerSelection == "paper" && computerSelection == "rock") {
+        playerScore++;
+        return "Player wins. Paper beats rock.";
+    } else if (playerSelection == "scissors" && computerSelection == "paper") {
+        playScore++;
+        return "Player wins. Scissors beat paper.";
+    } else if (playerSelection == "rock" && computerSelection == "paper") {
+        computerScore++;
+        return "Computer wins. Paper beats rock.";
+    } else if (playerSelection == "paper" && computerSelection == "scissors") {
+        computerScore++;
+        return "Computer wins. Scissors beat paper.";
+    } else if (playerSelection == "scissors" && computerSelection == "rock") {
+        computerScore++;
+        return "Computer wins. Rock beats scissors.";
+    }
+
 }
 
-function playerChoice() {
+/*function playerChoice() {
     let input = prompt("Rock, Paper, or Scissors?");
     while (input == null) {
         input = prompt("Rock, Paper, or Scissors?");
@@ -26,9 +52,9 @@ function playerChoice() {
         input = input.toLowerCase();
         check = validateInput(input);
       }
-    return input;
+    return input; 
 
-}
+} 
 
 function validateInput(choice) {
     if (choices.includes(choice)) {
@@ -37,29 +63,18 @@ function validateInput(choice) {
     else {
         return false
     }
-};
+}; */
 
 function computerChoice() {
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
-function checkWinner(choiceP,choiceC) {
-    if (choiceP == choiceC) {
-        return "Tie";
-    } else if (choiceP == "rock" && choiceC == "scissors") {
-        return "Player wins. Rock beats scissors."
-    } else if (choiceP == "paper" && choiceC == "rock") {
-        return "Player wins. Paper beats rock."
-    } else if (choiceP == "scissors" && choiceC == "paper") {
-        return "Player wins. Scissors beat paper." 
-    } else if (choiceP == "rock" && choiceC == "paper") {
-        return "Computer wins. Paper beats rock."
-    } else if (choiceP == "paper" && choiceC == "scissors") {
-        return "Computer wins. Scissors beat paper."
-    } else if (choiceP == "scissors" && choiceC == "rock") {
-        return "Computer wins. Rock beats scissors."
-    }
+// Adding functionality to Rock Button 
+const rButton = document.getElementById("rBtn");
+rButton.addEventListener('click', () => {
+  let playerSelection = "rock";
+  playRound();
+});
 
-}
 
-game();
+//game();

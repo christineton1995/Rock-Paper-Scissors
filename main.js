@@ -14,26 +14,26 @@ let computerScore = 0;
 
 //function to play one round, and keep track of score
 function playRound() {
-    let playerSelection = choices;
-    let computerSelection = computerChoice();
-    if (playerSelection == computerSelection) {
+    let playerSelec = choices;
+    let computerSelec = computerChoice();
+    if (playerSelec == computerSelec) {
         return "Tie";
-    } else if (playerSelection == "rock" && computerSelection == "scissors") {
+    } else if (playerSelec == "rock" && computerSelec == "scissors") {
         playerScore++;
         return "Player wins. Rock beats scissors.";
-    } else if (playerSelection == "paper" && computerSelection == "rock") {
+    } else if (playerSelec == "paper" && computerSelec == "rock") {
         playerScore++;
         return "Player wins. Paper beats rock.";
-    } else if (playerSelection == "scissors" && computerSelection == "paper") {
-        playScore++;
+    } else if (playerSelec == "scissors" && computerSelec == "paper") {
+        playerScore++;
         return "Player wins. Scissors beat paper.";
-    } else if (playerSelection == "rock" && computerSelection == "paper") {
+    } else if (playerSelec == "rock" && computerSelec == "paper") {
         computerScore++;
         return "Computer wins. Paper beats rock.";
-    } else if (playerSelection == "paper" && computerSelection == "scissors") {
+    } else if (playerSelec == "paper" && computerSelec == "scissors") {
         computerScore++;
         return "Computer wins. Scissors beat paper.";
-    } else if (playerSelection == "scissors" && computerSelection == "rock") {
+    } else if (playerSelec == "scissors" && computerSelec == "rock") {
         computerScore++;
         return "Computer wins. Rock beats scissors.";
     }
@@ -72,8 +72,8 @@ function computerChoice() {
 // Adding functionality to Rock Button 
 const rButton = document.getElementById("rBtn");
 rButton.addEventListener('click', () => {
-  let playerSelection = "rock";
-  playRound();
+    let playerSelec = "rock";
+    playRound();
 });
 
 

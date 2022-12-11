@@ -2,8 +2,8 @@ const choices = ["rock","paper","scissors"]
 
 
 // variables for storing scores
-let playerScore;
-let computerScore;
+let playerScore = 0;
+let computerScore = 0;
 
 let playerSelection;
 let computerSelection;

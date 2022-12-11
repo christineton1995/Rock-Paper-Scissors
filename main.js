@@ -46,6 +46,7 @@ function playRound(playerSelection,computerSelection) {
 
 }
 
+//Displaying winner results
 function checkWinner() {
     if (playerScore === 5) {
         document.getElementById("winner").textContent = 
@@ -62,6 +63,12 @@ function checkWinner() {
     }
 }
 
+//Restarting game
+const nButton = document.getElementById("newGame");
+newGame.addEventListener("click", () => {
+    window.location.reload();
+    return false;
+})
 
 // Adding functionality to Rock Button 
 const rButton = document.getElementById("rBtn");

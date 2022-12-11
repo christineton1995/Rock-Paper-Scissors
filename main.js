@@ -6,7 +6,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 let playerSelection;
-let computerSelection = computerChoice ();
+let computerSelection;
 
 
 //function to play one round, and keep track of score
@@ -42,18 +42,22 @@ function computerChoice() {
 // Adding functionality to Rock Button 
 const rButton = document.getElementById("rBtn");
 rButton.addEventListener("click", () => {
-    console.log (playRound("rock",computerChoice()));
+    let rockResult = playRound("rock",computerChoice());
+    document.getElementById("results").textContent = rockResult
 });
+
 
 //Adding functionality to Paper Button 
 const pButton = document.getElementById("pBtn");
 pButton.addEventListener("click", () => {
-    console.log (playRound("paper",computerChoice()));
+    let pResult = playRound("paper",computerChoice());
+    document.getElementById("results").textContent = pResult;
 })
 
 //Adding functionality to Scissors Button 
 const sButton = document.getElementById("sBtn");
 sButton.addEventListener("click", () => {
-    console.log(playRound("paper", computerChoice()));
+    let sResult = playRound("paper", computerChoice());
+    document.getElementById("results").textContent = sResult;
 })
 

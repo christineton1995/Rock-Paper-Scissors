@@ -2,9 +2,8 @@ const choices = ["rock","paper","scissors"]
 
 
 // variables for storing scores
-let playerScore = 0;
-let computerScore = 0;
-let round;
+let playerScore;
+let computerScore;
 
 let playerSelection;
 let computerSelection;
@@ -14,7 +13,7 @@ function computerChoice() {
 }
 
 
-//function to play one round, and keep track of score
+//function to play game and increment score
 function playRound(playerSelection,computerSelection) {
     if (playerSelection == computerSelection) {
         return "Tie";
